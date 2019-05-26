@@ -38,10 +38,11 @@ func (route *EntryRoute) hanldeNewRequest(w http.ResponseWriter, r *http.Request
 
 }
 
+/*SettingRoute - конфигурирование маршрута*/
 func (route *EntryRoute) SettingRoute(da *dao.StatisticDao, router *mux.Router) *mux.Router {
 	router.HandleFunc(handleCheckIntegrate, route.hanldeNewRequest).Methods("POST")
 	route.StatisticDAO = da
-	route.EResponser = &enhancer.Responer{}
+	route.EResponser = &enhancer.Responser{}
 
 	return router
 }
